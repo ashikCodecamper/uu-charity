@@ -1,6 +1,5 @@
 asgiref==3.7.2
 beautifulsoup4==4.12.3
-certifi @ file:///private/tmp/python-certifi-20231008-5561-13s00fm/certifi-2023.7.22
 cffi @ file:///private/tmp/cffi-20231014-5567-1hyue8f/cffi-1.16.0
 cryptography @ file:///private/tmp/python-cryptography-20231024-6375-1k9sys9/cryptography-41.0.5
 dj-database-url==2.1.0
