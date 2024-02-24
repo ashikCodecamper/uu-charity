@@ -1,0 +1,70 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Django-related
+*.log
+*.pot
+*.pyc
+db.sqlite3
+db.sqlite3-journal
+/media
+/static
+
+# Secret key
+*.key
+
+# Development
+*.sqlite3
+*.db
+
+# Environment variables
+.env
+
+# Virtual environment
+venv/
+env/
+
+# IDE files
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.pyc
+*.pyo
+*.pyd
+*.class
+*.db
+*.log
+*.db-journal
+.idea/
+.idea_db/
+*.sqlite
+
+# User-specific files
+*.rsuser
+*.rsuserbak
+*.suo
+*.user
+*.userosscache
+*.suo
+*.suo.lock
+*.userosscache
+*.suo.lock
+
+# Python Installer
+*.pip
+pip-log.txt
+
+# macOS / OS X
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# Linux
+*~

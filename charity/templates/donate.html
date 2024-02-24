@@ -1,0 +1,111 @@
+{% extends "master.html" %} {% block title %} Event - Donation {% endblock %} 
+{%block content %}
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-8">
+    <div class="card">
+      <div class="card-header">
+        <div class="alert alert-success" role="alert">
+          Generosity is not about how much you give, but how much love you put
+          into giving. Every donation, no matter the size, has the power to
+          create positive ripples that touch and transform lives.
+        </div>
+      </div>
+      <img
+        class="card-img-top"
+        src="https://kidsandclays.com/wp-content/uploads/2016/11/bigstock-Make-a-Donation-Charity-Donate-140880731.jpg"
+        alt="Card image cap"
+        height="200px"
+      />
+      <div class="card-body">
+        <form  action="{% url 'handle_donate' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="event_id" value="{{event.id}}">
+            <input type="hidden" name="charity_id" value="{{event.charity.id}}">
+          <div class="form-group">
+            <label for="InputName">Full Name</label>
+            <input
+              type="text"
+              name="donor_name"
+              class="form-control"
+              id="InputName"
+              aria-describedby="nameHelp"
+              placeholder="Enter full name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="InputEmail1">Email address</label>
+            <input
+              type="email"
+              name="donor_email"
+              class="form-control"
+              id="InputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+            />
+            <small id="emailHelp" class="form-text text-muted"
+              >We'll never share your email with anyone else.</small
+            >
+          </div>
+          <div class="form-group mb-2">
+            <label for="Inputphone">Mobile Number</label>
+            <input
+              type="text"
+              name="donor_phone"
+              class="form-control"
+              id="Inputphone"
+              placeholder="Enter phone number"
+            />
+          </div>
+
+          <div class="form-group">
+            <div class="form-floating">
+              <select
+                name="pay_method"
+                class="form-select"
+                id="floatingSelect"
+                aria-label="Floating label select example"
+              >
+                <option selected>Open this select</option>
+                <option value="bkash">Bkash</option>
+                <option value="nagad">Nagad</option>
+                <option value="rocket">Rocket</option>
+              </select>
+              <label for="floatingSelect">Select Payment Method</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="Inputtrx">Transaction ID</label>
+            <input
+              name="trx_id"
+              type="text"
+              class="form-control"
+              id="Inputtrx"
+              placeholder="Transaction ID"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="InputAmount">Amount</label>
+            <input
+                name="amount"
+              type="number"
+              class="form-control"
+              id="InputAmount"
+              placeholder="Amount"
+            />
+          </div>
+          <div class="form-group">
+            <label for="InputAmount">Address</label>
+            <textarea name="donor_address" class="form-control" id="" cols="30" rows="2"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary mt-2">make donation</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-2"></div>
+</div>
+
+{% endblock %}

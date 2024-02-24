@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}{% endblock %}</title>
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
+  {% bootstrap_javascript %}
+</head>
+<body>
+    <header style="margin-bottom: 2rem;">
+        <div class="navbar navbar-light bg-light shadow-sm">
+          <div class="container d-flex justify-content-between">
+            <a href="{% url 'index' %}" class="navbar-brand d-flex align-items-center">
+            <img src="https://erp.uttarauniversity.edu.bd/temp/assets/img/header_logo.png" alt="" width="64" height="64">
+              <strong style="margin-left: 5px;">UU Charity Management System</strong>
+            </a>
+          </div>
+        </div>
+      </header>
+
+
+  {% block content %}
+  {% endblock %}
+
+<footer class="footer mt-auto py-3 bg-dark" style="margin-top: 5rem;">
+    <div class="container text-dark text-center">
+        <p class="text-dark">Contact us at <a href="mailto:charity@uttarauniversity.edu.bd" class="text-white">charity@uttarauniversity.edu.bd</a></p>
+        <p class="text-dark">Follow us on <a href="https://www.facebook.com/uttarauniversity" class="text-white">Facebook</a> and <a href="https://twitter.com/uttara_univ" class="text-white">Twitter</a></p>
+    </div>
+  </footer>
+</div>
+</body>
+</html>

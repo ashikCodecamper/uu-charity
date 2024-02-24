@@ -1,0 +1,88 @@
+{% extends "master.html" %}
+
+{% block title %}
+  charity - List of all charitys
+{% endblock %}
+
+{% block content %}
+
+<main role="main">
+    <section class="jumbotron text-center" style="margin-bottom: 5rem;">
+        <div class="container">
+          <h1>Welcome to Uttara University Charity Management System</h1>
+          <p class="lead text-muted">Empowering Positive Change Through Charity</p>
+          <p>
+            <a href="/events/" class="btn btn-primary">View Upcoming Events</a>
+          </p>
+        </div>
+      </section>
+      <section class="container my-4 text-center" style="margin-top: 5rem;">
+        <h2 class="text-center">About Us</h2>
+        <p>
+            Uttara University is dedicated to making a positive impact on society through various charitable initiatives.
+            Our Charity Management System streamlines the process of organizing events, collecting donations, and engaging volunteers.
+            At Uttara University, we believe in the transformative power of collective action. Our Charity Management System not only simplifies administrative tasks but also amplifies the reach of our charitable endeavors. Through seamless coordination and community involvement, we aspire to uplift lives and contribute to building a more compassionate and sustainable society.
+        </p>
+    </section>
+    <section class="container">
+        <div class="row">
+            <div class="col-lg-4 text-center">
+                <i class="bi bi-1-circle text-primary" style='font-size:7rem;'></i>
+              <h2>Get Involved</h2>
+              <p >Make a difference by participating in our charity events, contributing donations, or volunteering your time.
+                Join us in creating a better and more compassionate community.</p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4 text-center">
+                <i class="bi bi-2-circle text-primary" style='font-size:7rem;'></i>
+              <h2>Impact</h2>
+              <p>Thanks to the support of our community, we have been able to achieve significant milestones.
+                Explore the positive impact we've made together and be inspired to contribute to future initiatives.</p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4 text-center">
+                <i class="bi bi-3-circle text-primary text-center" style='font-size:7rem;'></i>
+              <h2>Upcoming Events</h2>
+              <p>View our calendar of upcoming charity events and find out how you can get involved.</p>
+          </div>
+    </section>
+    <section class="container my-4 text-center" style="margin-top: 5rem;">
+        <h2 class="text-center">Our Charities</h2>
+        <p>
+            At Uttara University, we are committed to making a positive impact on society. Our Charity Management System helps us organize and execute various charitable initiatives. Through our collective efforts, we have been able to make a significant difference in the lives of many. We invite you to explore our past events and the impact we've made together.
+        </p>
+      <div class="album py-5 bg-light">
+        <div class="container">
+        
+          <div class="row">
+    
+    
+            {% for ac in allcharity %}
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <img src="{{ac.img_url}}" alt="" class="bd-placeholder-img card-img-top" height="100">
+                <div class="card-body">
+                  <p class="card-text">{{ ac.name }}</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-primary">
+                        <a href="/events/?charity_id={{ac.id}}" class="nav-link text-white">View Events</a>
+                        
+                    </button>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+    
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  
+
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends "master.html" %}
+
+{% block title %}
+  All Events
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <nav class="nav d-flex text-primary justify-content-between">
+            {% for ac in all_charities %}
+           <strong>
+            <a class="nav-link p-2 text-primary" href="/events/?charity_id={{ac.id}}">{{ ac.name }}</a>
+           </strong> 
+            {% endfor %}
+          </nav>
+    </div>
+</div>
+
+  <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 font-italic">Explore Our Events</h1>
+      <p class="lead my-3">At Uttara University, we take pride in hosting a diverse range of events that cater to various interests and causes. These events are carefully curated to inspire, engage, and make a positive impact on our community. Here are a few highlights from our upcoming and past events:</p>
+    </div>
+  </div>
+<section class="container my-4 text-center" style="margin-top: 5rem;">
+
+
+    
+      <div class="row mb-2">
+
+
+        {% for e in ev %}
+       
+        <div class="col-md-6">
+            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2 text-primary">{{ e.charity.name }}</strong>
+                <h3 class="mb-0">{{e.name}}</h3>
+                <div class="mb-1 text-muted">{{ e.start_date}}</div>
+                <p class="card-text mb-auto">{{ e.description |slice:":200"}}...</p>
+                <a href="{% url 'details' id=e.id %}" class="stretched-link">Continue reading</a>
+              </div>
+              <div class="col-auto d-none d-lg-block">
+                <img src="{{ e.img_url }}"  class="bd-placeholder-img" role="img"  width="200" height="250" alt="" srcset="">
+              </div>
+            </div>
+          </div>
+
+      {% endfor %}
+
+  </div>
+</section>
+
+  
+{% endblock %}
