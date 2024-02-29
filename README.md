@@ -57,6 +57,21 @@ Pull requests are welcome. For major changes, please open an issue first to disc
  python3 manage.py migrate
 
 
+## Technology we Used
+Python - programming language
+Database- SQL (sqlite3)
+Twitter Bootstrap (Frontend Framework)
+Django (Backend Framework)
+
+## Security
+We provides multiple protections against:
+
+Clickjacking
+Cross-site scripting
+Cross Site Request Forgery (CSRF)
+SQL injection
+Remote code execution
+
  ## Create Admin
  python3 manage.py createsuperuser
  username: ashikur.rahaman
